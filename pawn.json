@@ -4,7 +4,6 @@
 	"entry": "test.pwn",
 	"output": "test.amx",
 	"dependencies": [
-		"IllidanS4/PawnPlus",
-		"AGraber/y_unique"
+		"IllidanS4/PawnPlus"
 	]
 }
