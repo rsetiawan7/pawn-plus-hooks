@@ -4,7 +4,7 @@
 #endif
 
 #include <PawnPlus>
-#include "YSI-Includes/YSI_Coding/y_unique.inc"
+#include "YSI_Coding/y_unique.inc"
 
 #if defined _pp_hooks_included
 	#endinput
