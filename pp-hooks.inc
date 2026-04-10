@@ -4,7 +4,30 @@
 #endif
 
 #include <PawnPlus>
-#include "YSI_Coding/y_unique/y_unique_entry.inc"
+#if defined _inc_y_unique
+	#undef _inc_y_unique
+#endif
+
+#if !defined _Y_UNIQUE_INCLUDED
+	#tryinclude "y_unique\y_unique_entry"
+#endif
+#if !defined _Y_UNIQUE_INCLUDED
+	#tryinclude "YSI_Coding\y_unique\y_unique_entry"
+#endif
+#if !defined _Y_UNIQUE_INCLUDED
+	#tryinclude "YSI\YSI_Coding\y_unique\y_unique_entry"
+#endif
+#if !defined _Y_UNIQUE_INCLUDED
+	#tryinclude <YSI_Coding\y_unique\y_unique_entry>
+#endif
+#if !defined _Y_UNIQUE_INCLUDED
+	#tryinclude <YSI\YSI_Coding\y_unique\y_unique_entry>
+#endif
+#if defined _Y_UNIQUE_INCLUDED
+	#undef _Y_UNIQUE_INCLUDED
+#else
+	#error Did you use `YSI_Coding/y_unique` instead of `YSI_Coding\y_unique`?
+#endif
 
 #if defined _pp_hooks_included
 	#endinput
